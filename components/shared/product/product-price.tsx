@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
 
-const ProductPrice = ({ value, className }: { value: string; className?: string}) => {
+const ProductPrice = ({ value, className }: { value: number; className?: string}) => {
 
   // get int string and decimal string
-  console.log(value);
-  const [intPart, decimalPart] = value.split(".");
+  const stringValue = value.toFixed(2);
+  const [intPart, decimalPart] = stringValue.split(".");
 
   return ( <p className={ cn('text-2xl', className) }>
     <span className="text-xs align-super">$</span>
