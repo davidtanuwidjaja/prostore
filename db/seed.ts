@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@/lib/generated/prisma';
 import sampleData from './sample-data';
 
 async function main() {
@@ -13,7 +13,7 @@ async function main() {
     data: sampleData.products,
   });
     await prisma.user.createMany({
-    data: sampleData.users,
+    data: sampleData.user,
   });
 
   console.log('Sample data seeded successfully');
